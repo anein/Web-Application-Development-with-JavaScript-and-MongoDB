@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "plugin:meteor/recommended"
+  ],
+  "env": {
+    "node": true,
+    "browser": true,
+    "meteor": true, // meteor global variables.
+    "mongo": false // mongo global variables.
+  }
+}

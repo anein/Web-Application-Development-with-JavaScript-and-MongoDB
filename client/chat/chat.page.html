@@ -1,0 +1,32 @@
+<!-- Top level template for the chat page -->
+<template name="chat_page">
+    <h6> 
+      <span>You have a chat with</span> 
+      <b>{{ getUsername otherUserId}}</b>.
+      </h6>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-lg">
+                {{#if isLogin}}
+                <ul class="chat">
+                    {{#each messages}}
+                        {{> chat_message }}
+                    {{/each}}
+                </ul>
+                {{else}}
+                    <span>
+                        You are not authorized to view this conversation. 
+                    </span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form class="js-send-chat" >
+                <input class="input" type="text" name="chat" placeholder="type a message here..."  disabled='{{#unless isLogin }} disabled {{/unless}}' >
+                <button class="btn btn-default"  disabled='{{#unless isLogin }} disabled {{/unless}}' >send</button>
+            </form>
+        </div>
+    </div>
+</template>

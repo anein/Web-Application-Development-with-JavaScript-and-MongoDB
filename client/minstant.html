@@ -1,0 +1,36 @@
+<head>
+    <title>minstant</title>
+</head>
+
+<body>
+</body>
+
+<!-- this is the main template used by iron:router to build the page -->
+<template name="ApplicationLayout">
+    {{> yield "header"}}
+
+    <div class="container">
+        {{> yield "main"}}
+    </div>
+</template>
+
+<!-- top level template for the nav bar -->
+<template name="navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    Minstant!
+                </a>
+            </div>
+            <div class="nav navbar-nav">
+                {{> loginButtons}}
+            </div>
+        </div>
+    </nav>
+</template>
+
+<!-- Top level template for the lobby page -->
+<template name="lobby_page">
+    {{> available_user_list}}
+</template>

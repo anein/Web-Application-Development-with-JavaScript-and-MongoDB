@@ -1,0 +1,34 @@
+<!-- display an individual user -->
+<template name="available_user">
+    <div class="col-md-2">
+        <div class="user_avatar">
+            {{#if isMyUser _id}}
+                <div class="bg-success">
+                    {{getUsername _id}} (YOU)
+                    <br/>
+                    {{> available_image avatar=profile.avatar }}
+                </div>
+            {{else}}
+                {{#if getUsername _id }}
+                    <a href="/chat/{{_id}}">
+                        {{getUsername _id}}
+                        <br/>
+                        {{> available_image avatar=profile.avatar }}
+                    </a>
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</template>
+
+<!--display a user avatar-->
+<template name="available_image">
+
+    {{#if avatar }}
+        <img src="/{{avatar}}" class="avatar_img img-circle" alt="User Avatar">
+    {{ else }}
+        <img src="http://placehold.it/50/55C1E7/fff&amp;text=A" alt="User Avatar"
+             class="avatar_img img-circle">
+    {{/if}}
+
+</template>

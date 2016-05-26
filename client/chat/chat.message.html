@@ -1,0 +1,40 @@
+<!-- simple template that displays a message -->
+
+<!--
+    @todo Task 1: Improve the look and feel.
+    
+    Adapt the templates and helper functions so
+    that the messaging window displays users’ avatars next to their messages.
+    Feel free to add other enhancements!
+    
+-->
+<template name="chat_message">
+
+  <li class="left clearfix">
+
+        <span class="chat-img pull-left">
+            {{#if getAvatar user_id}}
+                <img src="/{{ getAvatar user_id }}" alt="User Avatar" class="avatar_img img-circle">
+            {{else}}
+                <img src="http://placehold.it/50/55C1E7/fff&amp;text=A" alt="User Avatar" class="avatar_img img-circle">
+            {{/if}}
+        </span>
+
+        <div class="chat-body clearfix">
+            <div class="header">
+                <strong class="primary-font">{{ getUsername user_id }} said: </strong>
+            </div>
+            <!-- 
+              @todo Task 4: Implement emoticons.
+              
+              Using a meteor package "emoticons",
+              implement emoticon functionality which allows the user to insert graphical emoticons
+              into their message.
+              
+            -->
+            <p>
+                {{{ parseEmoticons text }}}
+            </p>
+        </div>
+  </li>
+</template>
