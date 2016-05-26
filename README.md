@@ -18,8 +18,5 @@ Remove the autopublish package from the application and implement publish and su
 Using a meteor package "emoticons", implement emoticon functionality which allows the user to insert graphical emoticons into their message.
 
 ---
-<<<<<<< HEAD
- Good luck.
-=======
- Good luck.
->>>>>>> 6744e88ce1be3e3a6d6d10df68f73f513facb876
+Good luck.
+
